@@ -1,38 +1,41 @@
 package ru.steklopod.repo
 
+import ru.steklopod.entities.KeyWord
+import scalikejdbc.DB
+
 trait KeywordRepository {
-  /*
-  def createGame(game: Game): Game
+  def createKeyWord(keyWord: KeyWord): Long
 
-  def getGame(id: Long): Future[Option[Game]]
-
-  def findAll(): List[Game]
-
-  def findAll(max: Int): List[Game]
-
-  def findAll(max: Int, skip: Int): List[Game]
+  //  def getKeyWord(id: Long): Future[Option[KeyWord]]
+  //
+  //  def findAll(): List[KeyWord]
+  //
+  //  def findAll(max: Int): List[KeyWord]
+  //
+  //  def findAll(max: Int, skip: Int): List[KeyWord]
 
 }
 
-object DBGameRepository extends GameRepository {
-  GameDb.init()
-  GameDb.createSchema()
-  GameDb.createGameTablesAndEmptyGame()
+object DBKeywordRepository extends KeywordRepository {
+  KeyWordDb.init()
+  KeyWordDb.createSchema()
+  KeyWordDb.createKeyWordTablesAndEmptyKeyWord()
 
-//  override def createGame(game: Game): Future[Unit] =
-//    DB.futureLocalTx(implicit session => Game.create(game).map(_ => ()))
 
-  override def createGame(game: Game): Game =
-    DB.autoCommit(implicit session => Game.create(game))
+  override def createKeyWord(keyWord: KeyWord): Long =
+    DB.autoCommit(implicit session => KeyWord.create(keyWord))
 
-  override def getGame(id: Long): Future[Option[Game]] =
-    DB.futureLocalTx(implicit session => Game.findById(id))
 
-  override def findAll(): List[Game] = Game.findAll
+  //  override def createKeyWord(keyWord: KeyWord): Future[Unit] =
+  //    DB.futureLocalTx(implicit session => KeyWord.create(keyWord).map(_ => ()))
+  //  
+  //  override def getKeyWord(id: Long): Future[Option[KeyWord]] =
+  //    DB.futureLocalTx(implicit session => KeyWord.findById(id))
+  //
+  //  override def findAll(): List[KeyWord] = KeyWord.findAll
+  //
+  //  override def findAll(max: Int): List[KeyWord] = KeyWord.findAll(max: Int)
+  //
+  //  override def findAll(max: Int, skip: Int): List[KeyWord] = KeyWord.findAll(max: Int, skip: Int)
 
-  override def findAll(max: Int): List[Game] = Game.findAll(max: Int)
-
-  override def findAll(max: Int, skip: Int): List[Game] = Game.findAll(max: Int, skip: Int)
-
-  */
 }
