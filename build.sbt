@@ -39,7 +39,9 @@ libraryDependencies ++= Seq(
   // https://mvnrepository.com/artifact/mysql/mysql-connector-java
   "mysql" % "mysql-connector-java" % "8.0.11",
   //  "com.h2database" % "h2" % "1.4.197" % Test,
-  "com.h2database" % "h2" % "1.4.197"
+  "com.h2database" % "h2" % "1.4.197",
+    // https://mvnrepository.com/artifact/junit/junit
+   "junit" % "junit" % "4.12" % Test
 
 )
 
