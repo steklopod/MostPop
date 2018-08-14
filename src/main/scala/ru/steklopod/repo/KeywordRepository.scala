@@ -17,9 +17,12 @@ trait KeywordRepository {
 }
 
 object DBKeywordRepository extends KeywordRepository {
-  KeyWordDb.init()
-  KeyWordDb.createSchema()
-  KeyWordDb.createKeyWordTablesAndEmptyKeyWord()
+
+  def initSchemaAndTables(): Unit = {
+    KeyWordDb.init()
+    KeyWordDb.createSchema()
+    KeyWordDb.createKeyWordTablesAndEmptyKeyWord()
+  }
 
 
   override def createKeyWord(keyWord: KeyWord): Long =
