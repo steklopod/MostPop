@@ -1,11 +1,11 @@
-package ru.steklopod.util
+package ru.steklopod.parsers
 
 import java.net.URL
 
 import scala.io.Source
 import scala.util.Try
 
-object Parser {
+object SimpleParser {
 
   def parseURL(url: String): Try[URL] = Try(new URL(url))
 

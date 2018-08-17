@@ -22,17 +22,14 @@ object ConnectionAccesNamesStore {
 
   object DataSource {
     import com.zaxxer.hikari._
+//  TODO - choose profile `postgres/maria`
+
     private[this] lazy val dataSource: DataSource = {
       val ds = new HikariDataSource()
       ds.setDriverClassName(DRIVER_MARIA_DB)
       ds.setJdbcUrl(URL_MARIA)
       ds.setPassword(PSWRD_MARIA)
       ds.setUsername(LOGIN_MARIA)
-
-//      ds.setJdbcUrl(URL_H2_IN_MEMORY)
-//      ds.setPassword(PSWRD_H2_IN_MEMORY)
-//      ds.setUsername(LOGIN_H2_IN_MEMORY)
-
       ds
     }
     def apply(): DataSource = dataSource

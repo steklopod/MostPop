@@ -1,11 +1,11 @@
 package ru.steklopod
 
 import org.scalatest.{FunSuite, Matchers}
-import ru.steklopod.util.Parser._
+import ru.steklopod.parsers.SimpleParser._
 
 import scala.util.{Failure, Success}
 
-class InitFunSuite extends FunSuite with Matchers {
+class SimpleParserTest extends FunSuite with Matchers {
 
   private[this] val sessionValue = "$2a$10$SjInPRoSm"
   private[this] val url = "https://lenta.ru"

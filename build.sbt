@@ -2,7 +2,6 @@ name := "MostPop"
 
 scalaVersion := "2.12.5"
 
-
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.5" % "test",
   "org.scalacheck" %% "scalacheck" % "1.13.5" % "test",
@@ -40,9 +39,8 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "8.0.11",
   //  "com.h2database" % "h2" % "1.4.197" % Test,
   "com.h2database" % "h2" % "1.4.197",
-    // https://mvnrepository.com/artifact/junit/junit
-   "junit" % "junit" % "4.12" % Test
-
+  "junit" % "junit" % "4.12" % Test,
+  "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.1"
 )
 
 testFrameworks += new TestFramework("org.scalameter.ScalaMeterFramework")
